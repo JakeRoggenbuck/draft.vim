@@ -15,3 +15,9 @@ I often write important messages in a vim buffer before I send it.
 - Open vim and run `:Draft <Title>` or `:Draft` to auto name with the date and time
 - Draft will open a new file in a specific directory, with a unique name
 - The file will be based on a template
+
+## TODO
+Open file in vim buffer
+Have keybind and directory set in plugin
+Have search to reopen and view other drafts
+Make command to run command `:Draft <Title>` and `:Draft`
