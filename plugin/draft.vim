@@ -14,11 +14,9 @@ py3 << EOF
 from draft import Draft
 
 draft_name = vim.eval("s:draft_name")
-if draft_name == "":
-	draft_name = False
+drafts_directory = vim.eval("g:drafts_directory")
 
-draft = Draft()
-draft.new(draft_name)
+draft = Draft(draft_name, drafts_directory)
 
 EOF
 endfunc

@@ -2,6 +2,7 @@ from datetime import datetime
 from typing import Optional
 from string import ascii_letters
 from random import choice
+from os import path
 
 
 def name_string_generator(length: int = 16) -> str:
@@ -39,15 +40,25 @@ def draft_file_namer(name: Optional[str], now: datetime.now) -> str:
 
 
 class Draft:
-    def __init__(self):
-        pass
+    def __init__(self, name: str, directory: str):
+        self.name = name
+        self.directory = directory
+        self.now = datetime.now()
 
-    def new(self, name: bool = None):
-        now = datetime.now()
-        draft_name = draft_file_namer(name, now)
-        draft_title = draft_titler(name, now)
-        print(draft_name)
-        print(draft_title)
+        self.draft_name = draft_file_namer(self.name, self.now)
+        self.draft_title = draft_titler(self.name, self.now)
+
+        self.path = path.join(self.directory, self.draft_name)
+
+    def write_file(self):
+        file = open(self.path)
+        message = self.title + "\n\n"
+        file.write(message)
+
+    def open(self):
+        """Open new file in buffer"""
+        # TODO: open self.path in vim
+        pass
 
 
 if __name__ == "__main__":
