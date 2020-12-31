@@ -17,7 +17,9 @@ I often write important messages in a vim buffer before I send it.
 - The file will be based on a template
 
 ## TODO
-Open file in vim buffer
-Have keybind and directory set in plugin
-Have search to reopen and view other drafts
-Make command to run command `:Draft <Title>` and `:Draft`
+- Open file in vim buffer
+- Have keybind and directory set in plugin
+- Have search to reopen and view other drafts
+- Make command to run command `:Draft <Title>` and `:Draft`
+- Have keybind call function
+- Have plugin contain correct api, for new file and search
