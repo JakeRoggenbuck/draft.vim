@@ -54,5 +54,5 @@ class Draft:
 
     def write_file(self):
         file = open(self.path, "w")
-        message = self.title + "\n\n"
+        message = self.draft_title + "\n\n"
         file.write(message)
