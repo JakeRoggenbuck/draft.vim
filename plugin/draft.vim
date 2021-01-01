@@ -11,6 +11,8 @@ let g:loaded_draft_plugin = 1
 
 let g:drafts_directory = "~/Library/draft"
 
+let s:plugin_root_dir = fnamemodify(resolve(expand('<sfile>:p')), ':h')
+
 func! g:NewDraft(...)
 py3 << EOF
 
