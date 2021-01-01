@@ -2,7 +2,7 @@ from datetime import datetime
 from typing import Optional
 from string import ascii_letters
 from random import choice
-from os import path
+from os import path, listdir
 
 
 def name_string_generator(length: int = 16) -> str:
@@ -56,3 +56,7 @@ class Draft:
         file = open(self.path, "w")
         message = self.draft_title + "\n\n"
         file.write(message)
+
+
+def list_drafts(directory: str) -> list:
+    return listdir(directory)

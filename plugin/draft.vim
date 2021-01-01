@@ -50,7 +50,8 @@ func! g:ListDrafts()
 py3 << EOF
 from draft import list_drafts
 
-for x in list_drafts():
-	print(x)
+drafts_directory = vim.eval("g:drafts_directory")
+for file in list_drafts(drafts_directory):
+	print(file)
 EOF
 endfunc
