@@ -50,13 +50,9 @@ class Draft:
 
         self.path = path.join(self.directory, self.draft_name)
 
+        self.write_file()
+
     def write_file(self):
         file = open(self.path)
         message = self.title + "\n\n"
         file.write(message)
-
-
-if __name__ == "__main__":
-    draft = Draft()
-    draft.new()
-    draft.new("Heyy")
