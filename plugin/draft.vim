@@ -9,14 +9,17 @@ endif
 
 let g:loaded_draft_plugin = 1
 
-func! g:NewDraft()
+let g:drafts_directory = "~/Library/draft"
+
+func! g:NewDraft(draft_num)
 py3 << EOF
 from draft import Draft
+import vim
 
-draft_name = vim.eval("s:draft_name")
+draft_name = vim.eval("a:draft_name")
 drafts_directory = vim.eval("g:drafts_directory")
 
 draft = Draft(draft_name, drafts_directory)
-
+vim.command(f":e {draft.path}")
 EOF
 endfunc

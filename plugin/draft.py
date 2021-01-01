@@ -55,14 +55,8 @@ class Draft:
         message = self.title + "\n\n"
         file.write(message)
 
-    def open(self):
-        """Open new file in buffer"""
-        # TODO: open self.path in vim
-        pass
-
 
 if __name__ == "__main__":
     draft = Draft()
     draft.new()
-
     draft.new("Heyy")
