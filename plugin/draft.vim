@@ -9,7 +9,7 @@ endif
 
 let g:loaded_draft_plugin = 1
 
-let g:drafts_directory = "~/Library/draft"
+let g:drafts_directory = "~/Library/drafts"
 let s:plugin_root_dir = fnamemodify(resolve(expand('<sfile>:p')), ':h')
 
 
