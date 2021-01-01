@@ -34,7 +34,8 @@ def draft_file_namer(name: Optional[str], now: datetime.now) -> str:
 
     file_name = f"{date}_{random_string}"
     if name is not None:
-        file_name = f"{name.lower()}_{file_name}"
+        name = name.lower().replace(" ", "_")
+        file_name = f"{name}_{file_name}"
 
     return file_name
 
