@@ -26,7 +26,7 @@ sys.path.insert(0, python_root_dir)
 from draft import Draft
 
 args = vim.eval("a:0") 
-if args > 0:
+if int(args) > 0:
 	draft_name = vim.eval("a:1")
 else:
 	draft_name = None
