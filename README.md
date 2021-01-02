@@ -14,9 +14,12 @@ I often write important messages in a vim buffer before I send it.
 ## Setup and Config
 
 #### Make a drafts directory
-- Add the command to setup a drafts directory `let g:drafts_directory = "/path/to/drafts/"`
+- Add the command to setup a drafts directory
+```vim
+let g:drafts_directory = "/path/to/drafts/"
+```
 
-### Optional, create a keybind for the commands
+#### Optional, create a keybind for the commands
 
 #### `NewDraft` Keybind
 ```vim
