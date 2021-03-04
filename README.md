@@ -52,3 +52,9 @@ nnoremap <Leader>ld :call ListDrafts()<CR>
 - Have plugin contain correct api, for new file and search
 - Make a search in python
 - Make list, let you open listed files to edit
+- Change file extension, maybe a keybind or a function call, but append .txt or .md to a file
+- Keybind or function call to copy contents with and without header to file
+- Make a convert to pdf more markdown
+
+## Maybe TODO
+- Make a draft file type with metadata and parse out the metadata when opened in vim, then use this data to search for notes better and stuff, like have raw data for python to search better with
