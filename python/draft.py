@@ -7,9 +7,7 @@ from os import path, listdir
 
 def name_string_generator(length: int = 16) -> str:
     """Generate a random string for file names"""
-    name_string = ""
-    for letter in range(length):
-        name_string += choice(ascii_letters)
+    name_string = "".join(choice(ascii_letters) for _ in range(length))
     return name_string
 
 

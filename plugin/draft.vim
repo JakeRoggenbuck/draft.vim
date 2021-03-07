@@ -11,6 +11,9 @@ let g:loaded_draft_plugin = 1
 
 let s:plugin_root_dir = fnamemodify(resolve(expand('<sfile>:p')), ':h')
 
+func! g:OpenDrafts()
+	execute ":edit" . g:drafts_directory
+endfunc
 
 func! s:SourcePython()
 py3 << EOF
