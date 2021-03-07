@@ -31,8 +31,14 @@ nnoremap <Leader>nd :call NewDraft()<CR>
 nnoremap <Leader>ld :call ListDrafts()<CR>
 ```
 
+#### `OpenDrafts` Keybind
+```vim
+nnoremap <Leader>z :call OpenDrafts()<CR>
+```
+
 ## Use
-- Open vim and run `:call NewDraft()` or `:call NewDraft("<Title>")` to auto name with the date and time
+- Open vim and run `:Draft` or `:Draft "<Title>"` to auto name with the date and time
+- Edit the file extension `:DraftExt .md` to change the file to markdown
 - Draft will open a new file in a specific directory, with a unique name
 - The file will be based on a template with stuff like the title and datetime
 
@@ -45,16 +51,8 @@ nnoremap <Leader>ld :call ListDrafts()<CR>
 
 
 ## TODO
-- Open file in vim buffer
-- Have keybind and directory set in plugin
-- Have search to reopen and view other drafts
-- Make command to run command `:Draft <Title>` and `:Draft`
-- Have plugin contain correct api, for new file and search
-- Make a search in python
-- Make list, let you open listed files to edit
-- Change file extension, maybe a keybind or a function call, but append .txt or .md to a file
 - Keybind or function call to copy contents with and without header to file
-- Make a convert to pdf more markdown
+- Make a convert to pdf for markdown
 
 ## Maybe TODO
 - Make a draft file type with metadata and parse out the metadata when opened in vim, then use this data to search for notes better and stuff, like have raw data for python to search better with

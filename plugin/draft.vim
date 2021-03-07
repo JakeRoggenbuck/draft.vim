@@ -1,6 +1,6 @@
 " draft.vim - Quickly writeup and save drafts for messaging apps in your favorite editor
 " Authors:      Jake Roggenbuck
-" Version:      0.1
+" Version:      0.2
 " License:      MIT
 
 if exists('g:loaded_draft_plugin') || &compatible || v:version < 700
@@ -57,3 +57,12 @@ for file in list_drafts(drafts_directory):
 	print(file)
 EOF
 endfunc
+
+func! g:ChangeFileExt(ext)
+	let s:filename = expand('%:p')
+	execute "file " . s:filename . a:ext
+endfunc
+
+command! -bar -bang -nargs=? Draft call NewDraft(<q-args>)
+command! -bar -bang -nargs=? DraftExt call ChangeFileExt(<q-args>)
+command! -bar -bang OpenDrafts call OpenDrafts()
