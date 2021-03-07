@@ -31,8 +31,14 @@ nnoremap <Leader>nd :call NewDraft()<CR>
 nnoremap <Leader>ld :call ListDrafts()<CR>
 ```
 
+#### `OpenDrafts` Keybind
+```vim
+nnoremap <Leader>z :call OpenDrafts()<CR>
+```
+
 ## Use
-- Open vim and run `:call NewDraft()` or `:call NewDraft("<Title>")` to auto name with the date and time
+- Open vim and run `:Draft` or `:Draft "<Title>"` to auto name with the date and time
+- Edit the file extension `:DraftExt .md` to change the file to markdown
 - Draft will open a new file in a specific directory, with a unique name
 - The file will be based on a template with stuff like the title and datetime
 
