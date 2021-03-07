@@ -57,3 +57,12 @@ for file in list_drafts(drafts_directory):
 	print(file)
 EOF
 endfunc
+
+func! g:ChangeFileExt(ext, args)
+	let s:filename = expand('%:p')
+	execute "file " . s:filename . a:ext
+endfunc
+
+command! -bar -bang -nargs=? Draft call NewDraft(<q-args>)
+command! -bar -bang -nargs=? DraftExt call ChangeFileExt(<q-args>)
+command! -bar -bang OpenDrafts call OpenDrafts()
