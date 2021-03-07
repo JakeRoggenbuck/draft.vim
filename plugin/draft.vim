@@ -58,7 +58,7 @@ for file in list_drafts(drafts_directory):
 EOF
 endfunc
 
-func! g:ChangeFileExt(ext, args)
+func! g:ChangeFileExt(ext)
 	let s:filename = expand('%:p')
 	execute "file " . s:filename . a:ext
 endfunc
