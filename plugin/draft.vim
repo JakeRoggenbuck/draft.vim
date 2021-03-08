@@ -61,6 +61,9 @@ endfunc
 func! g:ChangeFileExt(ext)
 	let s:filename = expand('%:p')
 	execute "file " . s:filename . a:ext
+	" Reload buffer
+	:w
+	:e!
 endfunc
 
 command! -bar -bang -nargs=? Draft call NewDraft(<q-args>)
