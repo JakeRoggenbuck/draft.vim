@@ -67,8 +67,8 @@ func! g:ChangeFileExt(ext)
 endfunc
 
 func! g:ClipDraft()
-	let s:filename = expand('%:p')
-	command! "xclip -sel clip " . s:filename
+	let s:filename = 
+	command! xclip -sel clip . expand('%:p')
 endfunc
 
 command! -bar -bang -nargs=? Draft call NewDraft(<q-args>)
