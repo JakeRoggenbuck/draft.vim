@@ -59,8 +59,7 @@ EOF
 endfunc
 
 func! g:ChangeFileExt(ext)
-	let s:filename = expand('%:p')
-	execute "file " . s:filename . a:ext
+	execute "file " . expand('%:p') . a:ext
 	" Reload buffer
 	:w
 	:e!
@@ -68,9 +67,10 @@ endfunc
 
 func! g:ClipDraft()
 	let s:filename = 
-	command! xclip -sel clip . expand('%:p')
+	execute ':!command xclip -sel clip ' . expand('%:p')
 endfunc
 
 command! -bar -bang -nargs=? Draft call NewDraft(<q-args>)
 command! -bar -bang -nargs=? DraftExt call ChangeFileExt(<q-args>)
+command! -bar -bang DraftCopy call ClipDraft()
 command! -bar -bang OpenDrafts call OpenDrafts()
