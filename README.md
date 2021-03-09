@@ -41,14 +41,13 @@ nnoremap <Leader>z :call OpenDrafts()<CR>
 
 ### Commands
 
-|-------------------------|-------------------------------------------------|
-| Command                 | Description                                     |
-| `:Draft`                | Open a blanck new draft                         |
-| `:Draft <title>`        | Open a draft with a title                       |
-| `:DraftExt <extension>` | Change the file extension of a draft            |
-| `:Drafts`               | Open the draft directory in a buffer            |
-| `:DraftCopy`            | Copy the contents of the draft to the clipboard |
-|-------------------------|-------------------------------------------------|
+| Command              | Description                                     |
+|----------------------|-------------------------------------------------|
+| Draft                | Open a blanck new draft                         |
+| Draft <title>        | Open a draft with a title                       |
+| DraftExt <extension> | Change the file extension of a draft            |
+| Drafts               | Open the draft directory in a buffer            |
+| DraftCopy            | Copy the contents of the draft to the clipboard |
 
 ### More info
 
