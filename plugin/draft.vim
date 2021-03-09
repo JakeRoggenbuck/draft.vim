@@ -1,6 +1,6 @@
 " draft.vim - Quickly writeup and save drafts for messaging apps in your favorite editor
 " Authors:      Jake Roggenbuck
-" Version:      0.2
+" Version:      0.3
 " License:      MIT
 
 if exists('g:loaded_draft_plugin') || &compatible || v:version < 700
@@ -11,9 +11,24 @@ let g:loaded_draft_plugin = 1
 
 let s:plugin_root_dir = fnamemodify(resolve(expand('<sfile>:p')), ':h')
 
+
 func! g:OpenDrafts()
 	execute ":edit" . g:drafts_directory
 endfunc
+
+func! g:ChangeFileExt(ext)
+	execute "file " . expand('%:p') . a:ext
+	" Reload buffer
+	:w
+	:e!
+endfunc
+
+func! g:ClipDraft()
+	" Copy the contents of the file to clipboard
+	:w
+	execute ':silent !command xclip -sel clip ' . expand('%:p')
+endfunc
+
 
 func! s:SourcePython()
 py3 << EOF
@@ -58,18 +73,7 @@ for file in list_drafts(drafts_directory):
 EOF
 endfunc
 
-func! g:ChangeFileExt(ext)
-	execute "file " . expand('%:p') . a:ext
-	" Reload buffer
-	:w
-	:e!
-endfunc
-
-func! g:ClipDraft()
-	execute ':!command xclip -sel clip ' . expand('%:p')
-endfunc
-
 command! -bar -bang -nargs=? Draft call NewDraft(<q-args>)
 command! -bar -bang -nargs=? DraftExt call ChangeFileExt(<q-args>)
 command! -bar -bang DraftCopy call ClipDraft()
-command! -bar -bang OpenDrafts call OpenDrafts()
+command! -bar -bang Drafts call OpenDrafts()
