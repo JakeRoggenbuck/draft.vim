@@ -37,8 +37,25 @@ nnoremap <Leader>z :call OpenDrafts()<CR>
 ```
 
 ## Use
-- Open vim and run `:Draft` or `:Draft "<Title>"` to auto name with the date and time
-- Edit the file extension `:DraftExt .md` to change the file to markdown
+
+
+### Commands
+
+|-------------------------|-------------------------------------------------|
+| Command                 | Description                                     |
+| `:Draft`                | Open a blanck new draft                         |
+| `:Draft <title>`        | Open a draft with a title                       |
+| `:DraftExt <extension>` | Change the file extension of a draft            |
+| `:Drafts`               | Open the draft directory in a buffer            |
+| `:DraftCopy`            | Copy the contents of the draft to the clipboard |
+|-------------------------|-------------------------------------------------|
+
+### More info
+
+- New draft: run `:Draft` or `:Draft "<Title>"` to auto name with the date and time
+- Edit the file extension: run `:DraftExt .md` to change the file to markdown
+- Open the drafts directory: run `:Drafts`
+- Copy the contents of the current draft `:DraftCopy`
 - Draft will open a new file in a specific directory, with a unique name
 - The file will be based on a template with stuff like the title and datetime
 
@@ -49,9 +66,25 @@ nnoremap <Leader>z :call OpenDrafts()<CR>
 #### Vundle
 `Plugin 'jakeroggenbuck/draft.vim'`
 
+## Versions
+
+#### 0.1 draft.vim - not fully functional, just a concept
+
+- Open a new draft with a name
+- List the draft but no reopening them
+
+#### 0.2 draft.vim - first complete version
+
+- Add `OpenDrafts()`
+- Add new command aliases `Draft`, `DraftExt`
+
+#### 0.3 draft.vim - more features
+
+- Add `ClipDraft()` or `DraftCopy`
+- Add `Buffer reload for DraftExt`
 
 ## TODO
-- Keybind or function call to copy contents with and without header to file
+- Keybind or function call to copy contents without header to file
 - Make a convert to pdf for markdown
 
 ## Maybe TODO
