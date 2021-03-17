@@ -11,7 +11,6 @@ let g:loaded_draft_plugin = 1
 
 let s:plugin_root_dir = fnamemodify(resolve(expand('<sfile>:p')), ':h')
 
-
 func! g:OpenDrafts()
 	execute ":edit" . g:drafts_directory
 endfunc
@@ -29,6 +28,11 @@ func! g:ClipDraft()
 	execute ':silent !command xclip -sel clip ' . expand('%:p')
 endfunc
 
+func! g:ClipDraft()
+	" Copy the contents of the file to clipboard
+	:w
+	execute ':silent !command pandoc --standalone --template ' . s:plugin_root_dir . '/resouces/template.html ' . expand('%:p') . ' -o ' . expand('%:p') . '.html  --metadata pagetitle="' . expand('%:r') . '"'
+endfunc
 
 func! s:SourcePython()
 py3 << EOF
