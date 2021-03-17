@@ -28,7 +28,7 @@ func! g:ClipDraft()
 	execute ':silent !command xclip -sel clip ' . expand('%:p')
 endfunc
 
-func! g:ClipDraft()
+func! g:ConvertMdToHtml()
 	" Copy the contents of the file to clipboard
 	:w
 	execute ':silent !command pandoc --standalone --template ' . s:plugin_root_dir . '/resouces/template.html ' . expand('%:p') . ' -o ' . expand('%:p') . '.html  --metadata pagetitle="' . expand('%:r') . '"'
