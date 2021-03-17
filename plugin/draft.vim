@@ -45,7 +45,7 @@ endfunc
 func! g:ConvertToPDFFromTemplate()
 	call ConvertMDToHTML()
 	call ConvertHTMLToPDF()
-func
+endfunc
 
 func! s:SourcePython()
 py3 << EOF
