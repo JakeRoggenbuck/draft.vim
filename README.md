@@ -93,6 +93,10 @@ nnoremap <Leader>z :call OpenDrafts()<CR>
 
 ## TODO
 - Keybind or function call to copy contents without header to file
+- Make md to template pdf correctly do syntax highlight
+- Add feature to xdg open your pdf or html file
+- Add something to copy the file path of the new generated file
+- Add something to open file manager to the file created
 
 ## Maybe TODO
 - Make a draft file type with metadata and parse out the metadata when opened in vim, then use this data to search for notes better and stuff, like have raw data for python to search better with
