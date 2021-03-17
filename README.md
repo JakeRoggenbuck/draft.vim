@@ -1,20 +1,21 @@
 # Draft.vim
-Quickly writeup and save drafts for messaging apps in your favorite editor
+Quickly writeup and save drafts for messaging apps in your favorite editor [vimawesome.com/plugin/draft-vim](https://vimawesome.com/plugin/draft-vim)
 
 ## Why use Draft.vim
 I often write important messages in a vim buffer before I send it.
-- The main reason for this is because it is simply faster.
-- The second reason is you might want syntax highlighting or auto formating. 
-- Also, sometimes you want to write a message without worrying about accidentally sending it.
+
+	- The main reason for this is because it is simply faster.
+	- The second reason is you might want syntax highlighting or auto formating. 
+	- Also, sometimes you want to write a message without worrying about accidentally sending it.
 
 ## Features
-- Quickly open a new file, well named
-- File contains attributes like date, title, and platform that can be searchable
+	- Quickly open a new file, well named
+	- File contains attributes like date, title, and platform that can be searchable
 
 ## Setup and Config
 
 #### Make a drafts directory
-- Add the command to setup a drafts directory
+	- Add the command to setup a drafts directory
 ```vim
 let g:drafts_directory = "/path/to/drafts/"
 ```
@@ -41,22 +42,22 @@ nnoremap <Leader>z :call OpenDrafts()<CR>
 
 ### Commands
 
-| Command              | Description                                     |
-|----------------------|-------------------------------------------------|
-| Draft                | Open a blanck new draft                         |
-| Draft "title"        | Open a draft with a title                       |
-| DraftExt "extension" | Change the file extension of a draft            |
-| Drafts               | Open the draft directory in a buffer            |
-| DraftCopy            | Copy the contents of the draft to the clipboard |
+| Command                | Description                                     |
+|------------------------|-------------------------------------------------|
+| Draft                  | Open a blanck new draft                         |
+| Draft `"title"`        | Open a draft with a title                       |
+| DraftExt `"extension"` | Change the file extension of a draft            |
+| Drafts                 | Open the draft directory in a buffer            |
+| DraftCopy              | Copy the contents of the draft to the clipboard |
 
 ### More info
 
-- New draft: run `:Draft` or `:Draft "<Title>"` to auto name with the date and time
-- Edit the file extension: run `:DraftExt .md` to change the file to markdown
-- Open the drafts directory: run `:Drafts`
-- Copy the contents of the current draft `:DraftCopy`
-- Draft will open a new file in a specific directory, with a unique name
-- The file will be based on a template with stuff like the title and datetime
+	- New draft: run `:Draft` or `:Draft "<Title>"` to auto name with the date and time
+	- Edit the file extension: run `:DraftExt .md` to change the file to markdown
+	- Open the drafts directory: run `:Drafts`
+	- Copy the contents of the current draft `:DraftCopy`
+	- Draft will open a new file in a specific directory, with a unique name
+	- The file will be based on a template with stuff like the title and datetime
 
 ## Install
 #### Vim-Plug
