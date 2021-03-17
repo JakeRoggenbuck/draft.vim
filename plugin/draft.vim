@@ -33,9 +33,19 @@ func! g:ConvertMDToHTML()
 	execute ':silent !command pandoc --standalone --template ' . s:plugin_root_dir . '/resources/template.html ' . expand('%:p') . ' -o ' . expand('%:p') . '.html  --metadata pagetitle="' . expand('%:r') . '"'
 endfunc
 
+func! g:ConvertMDToPDF()
+	:w
+	execute ':silent !command pandoc ' . expand('%:p') . ' --pdf-engine=wkhtmltopdf --output ' . expand('%:p') . '.pdf'
+endfunc
+
 func! g:ConvertHTMLToPDF()
 	execute ':silent !command wkhtmltopdf ' . expand('%:p') . '.html ' . expand('%:p') . '.pdf'
 endfunc
+
+func! g:ConvertToPDFFromTemplate()
+	call ConvertMDToHTML()
+	call ConvertHTMLToPDF()
+func
 
 func! s:SourcePython()
 py3 << EOF
@@ -84,3 +94,6 @@ command! -bar -bang -nargs=? Draft call NewDraft(<q-args>)
 command! -bar -bang -nargs=? DraftExt call ChangeFileExt(<q-args>)
 command! -bar -bang DraftCopy call ClipDraft()
 command! -bar -bang Drafts call OpenDrafts()
+command! -bar -bang DraftToHTML call ConvertMDToHTML()
+command! -bar -bang DraftToPDF call ConvertMDToPDF()
+command! -bar -bang DraftToTemplatePDF call ConvertToPDFFromTemplate()
