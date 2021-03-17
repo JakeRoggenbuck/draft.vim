@@ -83,9 +83,16 @@ nnoremap <Leader>z :call OpenDrafts()<CR>
 - Add `ClipDraft()` or `DraftCopy`
 - Add `Buffer reload for DraftExt`
 
+#### 0.4 draft.vim - convert features
+- Add `ConvertMDToHTML()` for `DraftToHTML`
+- Add `ConvertMDToPDF()` for `DraftToPDF`
+- Add `ConvertHTMLToPDF` and `ConvertToPDFFromTemplate()` for `DraftToTemplatePDF`
+- Add template for html conversion
+- Change readme format a little
+- Add vimawesome link!
+
 ## TODO
 - Keybind or function call to copy contents without header to file
-- Make a convert to pdf for markdown
 
 ## Maybe TODO
 - Make a draft file type with metadata and parse out the metadata when opened in vim, then use this data to search for notes better and stuff, like have raw data for python to search better with
