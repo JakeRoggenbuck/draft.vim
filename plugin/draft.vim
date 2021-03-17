@@ -28,10 +28,13 @@ func! g:ClipDraft()
 	execute ':silent !command xclip -sel clip ' . expand('%:p')
 endfunc
 
-func! g:ConvertMdToHtml()
-	" Copy the contents of the file to clipboard
+func! g:ConvertMDToHTML()
 	:w
-	execute ':!command pandoc --standalone --template ' . s:plugin_root_dir . '/resources/template.html ' . expand('%:p') . ' -o ' . expand('%:p') . '.html  --metadata pagetitle="' . expand('%:r') . '"'
+	execute ':silent !command pandoc --standalone --template ' . s:plugin_root_dir . '/resources/template.html ' . expand('%:p') . ' -o ' . expand('%:p') . '.html  --metadata pagetitle="' . expand('%:r') . '"'
+endfunc
+
+func! g:ConvertHTMLToPDF()
+	execute ':silent !command wkhtmltopdf ' . expand('%:p') . '.html ' . expand('%:p') . '.pdf'
 endfunc
 
 func! s:SourcePython()
