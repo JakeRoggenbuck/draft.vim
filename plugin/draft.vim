@@ -48,7 +48,7 @@ func! g:ConvertToPDFFromTemplate()
 endfunc
 
 func! g:DraftDragon()
-	system('dragon --help')
+	let returned = system('dragon --help')
 	if v:shell_error == 0
 		execute ':silent !command dragon ' . expand('%:p')
 	else
@@ -106,3 +106,4 @@ command! -bar -bang Drafts call OpenDrafts()
 command! -bar -bang DraftToHTML call ConvertMDToHTML()
 command! -bar -bang DraftToPDF call ConvertMDToPDF()
 command! -bar -bang DraftToTemplatePDF call ConvertToPDFFromTemplate()
+command! -bar -bang DraftDragon call DraftDragon()
