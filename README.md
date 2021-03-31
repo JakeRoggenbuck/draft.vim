@@ -92,6 +92,7 @@ nnoremap <Leader>z :call OpenDrafts()<CR>
 - Add vimawesome link!
 
 ## TODO
+- BUG: having certain symbols like `(` or `)` in the title break things like the `DraftCopy`
 - Keybind or function call to copy contents without header to file
 - Make md to template pdf correctly do syntax highlight
 - Add feature to xdg open your pdf or html file
