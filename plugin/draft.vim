@@ -47,6 +47,15 @@ func! g:ConvertToPDFFromTemplate()
 	call ConvertHTMLToPDF()
 endfunc
 
+func! g:DraftDragon()
+	let returned = system('dragon --help')
+	if v:shell_error == 0
+		execute ':silent !command dragon ' . expand('%:p')
+	else
+		echo 'Dragon not installed, view help on README -- https://github.com/jakeroggenbuck/draft.vim'
+	endif
+endfunc
+
 func! s:SourcePython()
 py3 << EOF
 import sys
@@ -97,3 +106,4 @@ command! -bar -bang Drafts call OpenDrafts()
 command! -bar -bang DraftToHTML call ConvertMDToHTML()
 command! -bar -bang DraftToPDF call ConvertMDToPDF()
 command! -bar -bang DraftToTemplatePDF call ConvertToPDFFromTemplate()
+command! -bar -bang DraftDragon call DraftDragon()
