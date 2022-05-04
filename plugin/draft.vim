@@ -43,7 +43,7 @@ func! g:ConvertHTMLToPDF()
 endfunc
 
 func! g:OpenPDF()
-	execute ':silent !command xdg-open ' . expand('%:p') . '.pdf';
+	execute ':silent !command xdg-open ' . expand('%:p') . '.pdf'
 endfunc
 
 func! g:ConvertToPDFFromTemplate()
