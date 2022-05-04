@@ -4,9 +4,9 @@ Quickly writeup and save drafts for messaging apps in your favorite editor [vima
 ## Why use Draft.vim
 I often write important messages in a vim buffer before I send it.
 
-	- The main reason for this is because it is simply faster.
-	- The second reason is you might want syntax highlighting or auto formating. 
-	- Also, sometimes you want to write a message without worrying about accidentally sending it.
+- The main reason for this is because it is simply faster.
+- The second reason is you might want syntax highlighting or auto formating. 
+- Also, sometimes you want to write a message without worrying about accidentally sending it.
 
 ## Requirements
 - Pandoc
