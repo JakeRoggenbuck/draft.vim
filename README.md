@@ -8,6 +8,11 @@ I often write important messages in a vim buffer before I send it.
 	- The second reason is you might want syntax highlighting or auto formating. 
 	- Also, sometimes you want to write a message without worrying about accidentally sending it.
 
+## Requirements
+- Pandoc
+- wkhtmltopdf
+- Dragon (https://github.com/mwh/dragon)
+
 ## Features
 	- Quickly open a new file, well named
 	- File contains attributes like date, title, and platform that can be searchable
