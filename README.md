@@ -89,6 +89,7 @@ nnoremap <Leader>z :call OpenDrafts()<CR>
 - Add `Buffer reload for DraftExt`
 
 #### 0.4 draft.vim - convert features
+
 - Add `ConvertMDToHTML()` for `DraftToHTML`
 - Add `ConvertMDToPDF()` for `DraftToPDF`
 - Add `ConvertHTMLToPDF` and `ConvertToPDFFromTemplate()` for `DraftToTemplatePDF`
@@ -96,11 +97,15 @@ nnoremap <Leader>z :call OpenDrafts()<CR>
 - Change readme format a little
 - Add vimawesome link!
 
+#### 0.5 draft.vim - more features
+
+- Add `DraftDragonPDF` for `DraftDragonPDF`
+- Add `DraftOpenPDF` for `OpenPDF`
+- Add requirements
+
 ## TODO
 - BUG: having certain symbols like `(` or `)` in the title break things like the `DraftCopy`
-- Keybind or function call to copy contents without header to file
 - Make md to template pdf correctly do syntax highlight
-- Add feature to xdg open your pdf or html file
 
 ## Maybe TODO
 - Make a draft file type with metadata and parse out the metadata when opened in vim, then use this data to search for notes better and stuff, like have raw data for python to search better with
