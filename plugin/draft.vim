@@ -42,6 +42,10 @@ func! g:ConvertHTMLToPDF()
 	execute ':silent !command wkhtmltopdf ' . expand('%:p') . '.html ' . expand('%:p') . '.pdf'
 endfunc
 
+func! g:OpenPDF()
+	execute ':silent !command xdg-open ' . expand('%:p') . '.pdf';
+endfunc
+
 func! g:ConvertToPDFFromTemplate()
 	call ConvertMDToHTML()
 	call ConvertHTMLToPDF()
@@ -51,6 +55,15 @@ func! g:DraftDragon()
 	let returned = system('dragon --help')
 	if v:shell_error == 0
 		execute ':silent !command dragon ' . expand('%:p')
+	else
+		echo 'Dragon not installed, view help on README -- https://github.com/jakeroggenbuck/draft.vim'
+	endif
+endfunc
+
+func! g:DraftDragonPDF()
+	let returned = system('dragon --help')
+	if v:shell_error == 0
+		execute ':silent !command dragon ' . expand('%:p') . '.pdf'
 	else
 		echo 'Dragon not installed, view help on README -- https://github.com/jakeroggenbuck/draft.vim'
 	endif
@@ -105,5 +118,7 @@ command! -bar -bang DraftCopy call ClipDraft()
 command! -bar -bang Drafts call OpenDrafts()
 command! -bar -bang DraftToHTML call ConvertMDToHTML()
 command! -bar -bang DraftToPDF call ConvertMDToPDF()
+command! -bar -bang DraftOpenPDF call OpenPDF()
 command! -bar -bang DraftToTemplatePDF call ConvertToPDFFromTemplate()
 command! -bar -bang DraftDragon call DraftDragon()
+command! -bar -bang DraftDragonPDF call DraftDragonPDF()
