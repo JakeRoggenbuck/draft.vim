@@ -20,12 +20,12 @@ I often write important messages in a vim buffer before I send it.
 ## Setup and Config
 
 #### Make a drafts directory
-	- Add the command to setup a drafts directory
 ```vim
+" Add the command to setup a drafts directory
 let g:drafts_directory = "/path/to/drafts/"
 ```
 
-#### Optional, create a keybind for the commands
+## Optional, create a keybind for the commands
 
 #### `NewDraft` Keybind
 ```vim
@@ -66,10 +66,14 @@ nnoremap <Leader>z :call OpenDrafts()<CR>
 
 ## Install
 #### Vim-Plug
-`Plug 'jakeroggenbuck/draft.vim'`
+```vim
+Plug 'jakeroggenbuck/draft.vim'
+```
 
 #### Vundle
-`Plugin 'jakeroggenbuck/draft.vim'`
+```vim
+Plugin 'jakeroggenbuck/draft.vim'
+```
 
 ## Versions
 
