@@ -11,7 +11,7 @@ def name_string_generator(length: int = 16) -> str:
     return name_string
 
 
-def draft_titler(name: Optional[str], now: datetime.now) -> str:
+def draft_titler(name: Optional[str], now: datetime) -> str:
     """Make a title for the file with the date"""
     format = "%d/%m/%Y %H:%M:%S"
     day, time = now.strftime(format).split()
@@ -23,7 +23,7 @@ def draft_titler(name: Optional[str], now: datetime.now) -> str:
     return title
 
 
-def draft_file_namer(name: Optional[str], now: datetime.now) -> str:
+def draft_file_namer(name: Optional[str], now: datetime) -> str:
     """Make a unique file name for the draft"""
     format = "%d_%m_%Y__%H_%M_%S"
     date = now.strftime(format)
