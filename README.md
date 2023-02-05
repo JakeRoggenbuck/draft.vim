@@ -54,6 +54,7 @@ nnoremap <Leader>z :call OpenDrafts()<CR>
 | DraftExt `"extension"` | Change the file extension of a draft            |
 | Drafts                 | Open the draft directory in a buffer            |
 | DraftCopy              | Copy the contents of the draft to the clipboard |
+| DraftSearch            | Search through drafts by keyword                |
 
 ### More info
 
