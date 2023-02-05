@@ -1,6 +1,6 @@
 " draft.vim - Quickly writeup and save drafts for messaging apps in your favorite editor
 " Authors:      Jake Roggenbuck
-" Version:      0.5
+" Version:      0.6
 " License:      MIT
 
 if exists('g:loaded_draft_plugin') || &compatible || v:version < 700

@@ -107,6 +107,15 @@ Plugin 'jakeroggenbuck/draft.vim'
 - Add `DraftOpenPDF` for `OpenPDF`
 - Add requirements
 
+#### 0.6 draft.vim - added search
+
+- Add `DraftSearch` by word
+```
+:DraftSearch <term>
+
+:DraftSearch school
+```
+
 ## TODO
 - BUG: having certain symbols like `(` or `)` in the title break things like the `DraftCopy`
 - Make md to template pdf correctly do syntax highlight
