@@ -1,8 +1,10 @@
 from datetime import datetime
-from typing import Optional
+from typing import Optional, List, Tuple
 from string import ascii_letters
 from random import choice
 from os import path, listdir
+
+OUTFILE_PATH = "/tmp/draft-viewer-temp-file"
 
 
 def name_string_generator(length: int = 16) -> str:
@@ -55,6 +57,34 @@ class Draft:
         file = open(self.path, "w")
         message = self.draft_title + "\n\n"
         file.write(message)
+
+
+def search_single_word(directory: str, word: str):
+    matching_paths = []
+    paths = listdir(directory)
+    for j_path in paths:
+        full_path = path.join(directory, j_path)
+        with open(full_path) as file:
+            text = file.read()
+            num = text.count(word)
+
+            if num > 0:
+                matching_paths.append((num, full_path))
+
+    return matching_paths
+
+
+def open_draft_viewer(outfile_path: str, entries: List[Tuple[int, str]]):
+    with open(outfile_path, "w") as file:
+        file.write("=== Draft Viewer ===\n\n")
+
+        if len(entries) > 0:
+            file.write("#\tcount\tpath\n")
+            for n, entry in enumerate(entries):
+                count = str(entry[0]).ljust(5)
+                file.write(f"{n}.\t{count}\t{entry[1]}\n")
+        else:
+            file.write("Search term not found\n")
 
 
 def list_drafts(directory: str) -> list:

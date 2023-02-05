@@ -1,6 +1,6 @@
 " draft.vim - Quickly writeup and save drafts for messaging apps in your favorite editor
 " Authors:      Jake Roggenbuck
-" Version:      0.5
+" Version:      0.6
 " License:      MIT
 
 if exists('g:loaded_draft_plugin') || &compatible || v:version < 700
@@ -112,8 +112,25 @@ for file in list_drafts(drafts_directory):
 EOF
 endfunc
 
+
+func! g:SearchDraft(...)
+py3 << EOF
+from draft import open_draft_viewer, search_single_word, OUTFILE_PATH
+
+drafts_dir = vim.eval('g:drafts_directory')
+search_term = vim.eval("a:1")
+
+entries = search_single_word(drafts_dir, search_term)
+open_draft_viewer(OUTFILE_PATH, entries)
+
+vim.command(f":e {OUTFILE_PATH}")
+
+EOF
+endfunc
+
 command! -bar -bang -nargs=? Draft call NewDraft(<q-args>)
 command! -bar -bang -nargs=? DraftExt call ChangeFileExt(<q-args>)
+command! -bar -bang -nargs=? DraftSearch call SearchDraft(<q-args>)
 command! -bar -bang DraftCopy call ClipDraft()
 command! -bar -bang Drafts call OpenDrafts()
 command! -bar -bang DraftToHTML call ConvertMDToHTML()
