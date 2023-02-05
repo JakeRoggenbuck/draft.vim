@@ -112,8 +112,26 @@ for file in list_drafts(drafts_directory):
 EOF
 endfunc
 
+
+func! g:SearchDraft(...)
+py3 << EOF
+from draft import open_draft_viewer, search_single_word, OUTFILE_PATH
+
+drafts_dir = vim.eval('g:drafts_directory')
+search_term = vim.eval("a:1")
+found = search_draft(drafts_dir, search_term)
+
+entries = search_single_word(directory, search_term)
+open_draft_viewer(entries)
+
+vim.command(f":e {OUTFILE_PATH}")
+
+EOF
+endfunc
+
 command! -bar -bang -nargs=? Draft call NewDraft(<q-args>)
 command! -bar -bang -nargs=? DraftExt call ChangeFileExt(<q-args>)
+command! -bar -bang -nargs=? DraftSearch call SearchDraft(<q-args>)
 command! -bar -bang DraftCopy call ClipDraft()
 command! -bar -bang Drafts call OpenDrafts()
 command! -bar -bang DraftToHTML call ConvertMDToHTML()
