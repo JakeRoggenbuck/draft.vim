@@ -93,13 +93,14 @@ def open_draft_viewer(outfile_path: str, entries: List[Tuple[int, str]]):
             file.write("#\tcount\tpath\n")
 
             order = []
-            for n, entry in enumerate(entries):
+            for entry in entries:
                 count = str(entry[0]).ljust(5)
-                order.append((n, entry, count,))
+                order.append((entry, count,))
             # Sort by count
-            order.sort(key=lambda x: x[2])
+            order.sort(key=lambda x: x[2], reverse=True)
 
-            for o in order:
+            for a, o in enumerate(order):
+                n = a + 1
                 n, entry, count = o
                 file.write(f"{n}.\t{count}\t{entry[1]}\n")
         else:
