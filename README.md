@@ -117,8 +117,12 @@ Plugin 'jakeroggenbuck/draft.vim'
 :DraftSearch school
 ```
 
+#### 0.7 draft.vim - search fixes
+
+- Rank searches
+- Fix parenthesis in filename bug
+
 ## TODO
-- BUG: having certain symbols like `(` or `)` in the title break things like the `DraftCopy`
 - Make md to template pdf correctly do syntax highlight
 
 ## Maybe TODO
