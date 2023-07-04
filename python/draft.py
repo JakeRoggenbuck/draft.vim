@@ -65,17 +65,21 @@ class Draft:
         file.write(message)
 
 
-def search_single_word(directory: str, word: str):
+def search_single_word(directory: str, word: str) -> int:
     matching_paths = []
     paths = listdir(directory)
     for j_path in paths:
         full_path = path.join(directory, j_path)
         with open(full_path) as file:
-            text = file.read()
-            num = text.count(word)
+            try:
+                text = file.read()
+                num = text.count(word)
 
-            if num > 0:
-                matching_paths.append((num, full_path))
+                if num > 0:
+                    matching_paths.append((num, full_path))
+            except:
+                # file is not a text file
+                num = 0
 
     return matching_paths
 
