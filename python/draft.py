@@ -97,7 +97,7 @@ def open_draft_viewer(outfile_path: str, entries: List[Tuple[int, str]]):
                 count = str(entry[0]).ljust(5)
                 order.append((entry, count,))
             # Sort by count
-            order.sort(key=lambda x: x[2], reverse=True)
+            order.sort(key=lambda x: x[1], reverse=True)
 
             for a, o in enumerate(order):
                 n = a + 1
