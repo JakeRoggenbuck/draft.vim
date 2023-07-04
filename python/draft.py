@@ -100,7 +100,7 @@ def open_draft_viewer(outfile_path: str, entries: List[Tuple[int, str]]):
             order.sort(key=lambda x: x[2])
 
             for o in order:
-                n, entry, count = order
+                n, entry, count = o
                 file.write(f"{n}.\t{count}\t{entry[1]}\n")
         else:
             file.write("Search term not found\n")
