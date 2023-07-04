@@ -101,7 +101,7 @@ def open_draft_viewer(outfile_path: str, entries: List[Tuple[int, str]]):
 
             for a, o in enumerate(order):
                 n = a + 1
-                n, entry, count = o
+                entry, count = o
                 file.write(f"{n}.\t{count}\t{entry[1]}\n")
         else:
             file.write("Search term not found\n")
