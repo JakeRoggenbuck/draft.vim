@@ -77,7 +77,7 @@ def search_single_word(directory: str, word: str) -> int:
 
                 if num > 0:
                     matching_paths.append((num, full_path))
-            except:
+            except UnicodeDecodeError:
                 # file is not a text file
                 num = 0
 
@@ -89,9 +89,17 @@ def open_draft_viewer(outfile_path: str, entries: List[Tuple[int, str]]):
         file.write("=== Draft Viewer ===\n\n")
 
         if len(entries) > 0:
+            # Write header
             file.write("#\tcount\tpath\n")
+
+            order = []
             for n, entry in enumerate(entries):
                 count = str(entry[0]).ljust(5)
+                order.append((n, entry, count,))
+            order.sort(key=lambda x: x.count)
+
+            for o in order:
+                n, entry, count = order
                 file.write(f"{n}.\t{count}\t{entry[1]}\n")
         else:
             file.write("Search term not found\n")
