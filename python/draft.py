@@ -39,7 +39,7 @@ def draft_file_namer(name: Optional[str], now: datetime) -> str:
         # Replace characters that should not be in the filename
         for x in ["(", ")", "/", " ", "~"]:
             if x in name:
-                name.replace(x, "_")
+                name = name.replace(x, "_")
 
         file_name = f"{name}_{file_name}"
 
