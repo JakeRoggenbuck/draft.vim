@@ -9,7 +9,7 @@
 I often write important messages in a vim buffer before I send it.
 
 - The main reason for this is because it is simply faster.
-- The second reason is you might want syntax highlighting or auto formating. 
+- The second reason is you might want syntax highlighting or auto formatting. 
 - Also, sometimes you want to write a message without worrying about accidentally sending it.
 
 ## Requirements
@@ -94,7 +94,7 @@ Plugin 'jakeroggenbuck/draft.vim'
 
 #### 0.3 draft.vim - more features
 
-- Add `ClipDraft()` or `DraftCopy`
+- Add `ClipDraft()` for `DraftCopy`
 - Add `Buffer reload for DraftExt`
 
 #### 0.4 draft.vim - convert features
@@ -128,6 +128,7 @@ Plugin 'jakeroggenbuck/draft.vim'
 
 ## TODO
 - Make md to template pdf correctly do syntax highlight
+- Add custom date format and change default to m/d/y
 
 ## Maybe TODO
 - Make a draft file type with metadata and parse out the metadata when opened in vim, then use this data to search for notes better and stuff, like have raw data for python to search better with
