@@ -3,7 +3,7 @@
 [![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://github.com/JakeRoggenbuck?tab=repositories&q=&type=&language=python&sort=stargazers)
 [![Version](https://img.shields.io/badge/v0.8-blue?style=for-the-badge)](#)
 
-Quickly writeup and save drafts for messaging apps in your favorite editor [vimawesome.com/plugin/draft-vim](https://vimawesome.com/plugin/draft-vim)
+Quickly write up and save drafts for messaging apps in your favorite editor [vimawesome.com/plugin/draft-vim](https://vimawesome.com/plugin/draft-vim)
 
 ## Why use Draft.vim
 I often write important messages in a vim buffer before I send it.
