@@ -22,10 +22,8 @@ jobs:
   
     - name: Analysing the code with pylint
       run: |
-        cd python
-        pylint $(git ls-files '*.py')
+        pylint $(git ls-files '*.py') --fail-under 5 --fail-on E
 
     - name: Pytest
       run: |
-        cd python
         pytest
