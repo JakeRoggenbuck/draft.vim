@@ -131,6 +131,16 @@ Plugin 'jakeroggenbuck/draft.vim'
 - Change default date format to `m/d/y`
 - Documentation fixes and additions
 
+## Testing
+```sh
+pip install -r requirements.txt
+```
+```sh
+cd python
+
+pytest
+```
+
 ## TODO
 - Make md to template pdf correctly do syntax highlight
 
