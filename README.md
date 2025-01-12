@@ -126,9 +126,13 @@ Plugin 'jakeroggenbuck/draft.vim'
 - Rank searches
 - Fix parenthesis in filename bug
 
+#### 0.8 draft.vim - date format fix
+
+- Change default date format to `m/d/y`
+- Documentation fixes and additions
+
 ## TODO
 - Make md to template pdf correctly do syntax highlight
-- Add custom date format and change default to m/d/y
 
 ## Maybe TODO
 - Make a draft file type with metadata and parse out the metadata when opened in vim, then use this data to search for notes better and stuff, like have raw data for python to search better with
