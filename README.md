@@ -2,6 +2,7 @@
 [![Vim](https://img.shields.io/badge/Vim-%2311AB00.svg?logo=vim&logoColor=white&style=for-the-badge)](https://vimawesome.com/plugin/draft-vim)
 [![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://github.com/JakeRoggenbuck?tab=repositories&q=&type=&language=python&sort=stargazers)
 [![Version](https://img.shields.io/badge/v0.8-blue?style=for-the-badge)](#)
+[![Python](https://img.shields.io/github/actions/workflow/status/jakeroggenbuck/draft.vim/python.yml?branch=main&style=for-the-badge)](https://github.com/JakeRoggenbuck/draft.vim/actions)
 
 :pencil: Quickly write up and save drafts for messaging apps in your favorite editor [vimawesome.com/plugin/draft-vim](https://vimawesome.com/plugin/draft-vim)
 
