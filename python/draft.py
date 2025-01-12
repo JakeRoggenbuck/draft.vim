@@ -15,10 +15,10 @@ def name_string_generator(length: int = 16) -> str:
 
 def draft_titler(name: Optional[str], now: datetime) -> str:
     """Make a title for the file with the date"""
-    format = "%d/%m/%Y %H:%M:%S"
+    format = "%m/%d/%Y %H:%M:%S"
     day, time = now.strftime(format).split()
 
-    title = f"{day} {time}"
+    title = f"{day} {time}\n<!-- Using {format} -->"
     if name is not None:
         title = f"{name}\t{title}"
 
@@ -39,7 +39,7 @@ def draft_file_namer(name: Optional[str], now: datetime) -> str:
         # Replace characters that should not be in the filename
         for x in ["(", ")", "/", " ", "~"]:
             if x in name:
-                name.replace(x, "_")
+                name = name.replace(x, "_")
 
         file_name = f"{name}_{file_name}"
 
@@ -65,11 +65,14 @@ class Draft:
         file.write(message)
 
 
-def search_single_word(directory: str, word: str) -> int:
+def search_single_word(directory: str, word: str) -> List[str]:
+
     matching_paths = []
     paths = listdir(directory)
+
     for j_path in paths:
         full_path = path.join(directory, j_path)
+
         with open(full_path) as file:
             try:
                 text = file.read()
@@ -96,6 +99,7 @@ def open_draft_viewer(outfile_path: str, entries: List[Tuple[int, str]]):
             for entry in entries:
                 count = str(entry[0]).ljust(5)
                 order.append((entry, count,))
+
             # Sort by count
             order.sort(key=lambda x: int(x[1]), reverse=True)
 
