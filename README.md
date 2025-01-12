@@ -46,7 +46,7 @@ nnoremap <Leader>ld :call ListDrafts()<CR>
 nnoremap <Leader>z :call OpenDrafts()<CR>
 ```
 
-## Use
+## Usage
 
 
 ### Commands
@@ -80,7 +80,7 @@ Plug 'jakeroggenbuck/draft.vim'
 Plugin 'jakeroggenbuck/draft.vim'
 ```
 
-## Versions
+## Changelog
 
 #### 0.1 draft.vim - not fully functional, just a concept
 
