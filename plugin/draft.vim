@@ -1,6 +1,6 @@
-" draft.vim - Quickly writeup and save drafts for messaging apps in your favorite editor
+" draft.vim - Quickly write up and save drafts for messaging apps in your favorite editor
 " Authors:      Jake Roggenbuck
-" Version:      0.7
+" Version:      0.8
 " License:      MIT
 
 if exists('g:loaded_draft_plugin') || &compatible || v:version < 700
@@ -15,6 +15,7 @@ func! g:OpenDrafts()
 	execute ":edit" . g:drafts_directory
 endfunc
 
+" Add a `.md` to the file extension
 func! g:ChangeFileExt(ext)
 	execute "file " . expand('%:p') . a:ext
 	" Reload buffer
@@ -42,6 +43,7 @@ func! g:ConvertHTMLToPDF()
 	execute ':silent !command wkhtmltopdf ' . expand('%:p') . '.html ' . expand('%:p') . '.pdf'
 endfunc
 
+" Open the currently opened drafts' plug a `.pdf` in the default pdf viewer
 func! g:OpenPDF()
 	execute ':silent !command xdg-open ' . expand('%:p') . '.pdf'
 endfunc
@@ -52,7 +54,9 @@ func! g:ConvertToPDFFromTemplate()
 endfunc
 
 func! g:DraftDragon()
+	" Check that `dragon` is installed globally
 	let returned = system('dragon --help')
+	" The system call sets v:shell_error if it does not work
 	if v:shell_error == 0
 		execute ':silent !command dragon ' . expand('%:p')
 	else
@@ -61,7 +65,9 @@ func! g:DraftDragon()
 endfunc
 
 func! g:DraftDragonPDF()
+	" Check that `dragon` is installed globally
 	let returned = system('dragon --help')
+	" The system call sets v:shell_error if it does not work
 	if v:shell_error == 0
 		execute ':silent !command dragon ' . expand('%:p') . '.pdf'
 	else
@@ -79,7 +85,6 @@ python_root_dir = normpath(join(plugin_root_dir, '..', 'python'))
 sys.path.insert(0, python_root_dir)
 EOF
 endfunc
-
 
 call s:SourcePython()
 
@@ -128,6 +133,7 @@ vim.command(f":e {OUTFILE_PATH}")
 EOF
 endfunc
 
+" Create a commands that the ends user sees
 command! -bar -bang -nargs=? Draft call NewDraft(<q-args>)
 command! -bar -bang -nargs=? DraftExt call ChangeFileExt(<q-args>)
 command! -bar -bang -nargs=? DraftSearch call SearchDraft(<q-args>)
