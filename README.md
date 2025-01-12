@@ -1,4 +1,8 @@
 # Draft.vim
+[![Vim](https://img.shields.io/badge/Vim-%2311AB00.svg?logo=vim&logoColor=white&style=for-the-badge)](https://vimawesome.com/plugin/draft-vim)
+[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://github.com/JakeRoggenbuck?tab=repositories&q=&type=&language=python&sort=stargazers)
+[![Version](https://img.shields.io/badge/v0.8-blue?style=for-the-badge)](#)
+
 Quickly writeup and save drafts for messaging apps in your favorite editor [vimawesome.com/plugin/draft-vim](https://vimawesome.com/plugin/draft-vim)
 
 ## Why use Draft.vim
@@ -14,8 +18,8 @@ I often write important messages in a vim buffer before I send it.
 - Dragon (https://github.com/mwh/dragon)
 
 ## Features
-	- Quickly open a new file, well named
-	- File contains attributes like date, title, and platform that can be searchable
+- Quickly open a new, well named file in a consistent directory
+- Each file automatically contains attributes like the date and title that can be searchable
 
 ## Setup and Config
 
