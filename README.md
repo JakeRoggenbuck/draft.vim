@@ -62,12 +62,12 @@ nnoremap <Leader>z :call OpenDrafts()<CR>
 
 ### More info
 
-	- New draft: run `:Draft` or `:Draft "<Title>"` to auto name with the date and time
-	- Edit the file extension: run `:DraftExt .md` to change the file to markdown
-	- Open the drafts directory: run `:Drafts`
-	- Copy the contents of the current draft `:DraftCopy`
-	- Draft will open a new file in a specific directory, with a unique name
-	- The file will be based on a template with stuff like the title and datetime
+- New draft: run `:Draft` or `:Draft "<Title>"` to auto name with the date and time
+- Edit the file extension: run `:DraftExt .md` to change the file to markdown
+- Open the drafts directory: run `:Drafts`
+- Copy the contents of the current draft `:DraftCopy`
+- Draft will open a new file in a specific directory, with a unique name
+- The file will be based on a template with stuff like the title and datetime
 
 ## Install
 #### Vim-Plug
@@ -130,6 +130,8 @@ Plugin 'jakeroggenbuck/draft.vim'
 
 - Change default date format to `m/d/y`
 - Documentation fixes and additions
+- Fix rename symbols issue
+- Add testing for python
 
 ## Testing
 ```sh
